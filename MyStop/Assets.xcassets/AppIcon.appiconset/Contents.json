@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "NFT card.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -12,6 +13,7 @@
           "value" : "dark"
         }
       ],
+      "filename" : "NFT card 1.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -23,6 +25,7 @@
           "value" : "tinted"
         }
       ],
+      "filename" : "NFT card 2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
