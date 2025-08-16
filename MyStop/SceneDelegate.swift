@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let rootViewController = ViewController() // стартовый контроллер (ИЗМЕНИТЬ НАЗВАНИЕ)
+        let rootViewController = BusStopViewController()
         window.rootViewController = rootViewController
         self.window = window
         window.makeKeyAndVisible()
