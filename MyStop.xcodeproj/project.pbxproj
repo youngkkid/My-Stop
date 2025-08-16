@@ -9,9 +9,13 @@
 /* Begin PBXBuildFile section */
 		846B9E722E4E1F740059E156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E6A2E4E1F740059E156 /* AppDelegate.swift */; };
 		846B9E732E4E1F740059E156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */; };
-		846B9E742E4E1F740059E156 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E702E4E1F740059E156 /* ViewController.swift */; };
+		846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E702E4E1F740059E156 /* BusStopViewController.swift */; };
 		846B9E752E4E1F740059E156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B9E6B2E4E1F740059E156 /* Assets.xcassets */; };
 		846B9E772E4E1F740059E156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B9E6E2E4E1F740059E156 /* LaunchScreen.storyboard */; };
+		84E764E32E5071970053698B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E764E22E5071970053698B /* AlertManager.swift */; };
+		84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */; };
+		84F1441E2E4FB8E900A4462E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F1441D2E4FB8E900A4462E /* SnapKit */; };
+		84F144202E4FBB9E00A4462E /* BusStopItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +25,10 @@
 		846B9E6C2E4E1F740059E156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846B9E6D2E4E1F740059E156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		846B9E702E4E1F740059E156 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		846B9E702E4E1F740059E156 /* BusStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopViewController.swift; sourceTree = "<group>"; };
+		84E764E22E5071970053698B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTableViewCell.swift; sourceTree = "<group>"; };
+		84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopItemModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F1441E2E4FB8E900A4462E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,7 +62,8 @@
 		846B9E712E4E1F740059E156 /* MyStop */ = {
 			isa = PBXGroup;
 			children = (
-				846B9E702E4E1F740059E156 /* ViewController.swift */,
+				84E764E22E5071970053698B /* AlertManager.swift */,
+				84F144192E4FB3B200A4462E /* BusStopScreen */,
 				846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */,
 				846B9E6A2E4E1F740059E156 /* AppDelegate.swift */,
 				846B9E6E2E4E1F740059E156 /* LaunchScreen.storyboard */,
@@ -62,6 +71,16 @@
 				846B9E6C2E4E1F740059E156 /* Info.plist */,
 			);
 			path = MyStop;
+			sourceTree = "<group>";
+		};
+		84F144192E4FB3B200A4462E /* BusStopScreen */ = {
+			isa = PBXGroup;
+			children = (
+				846B9E702E4E1F740059E156 /* BusStopViewController.swift */,
+				84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */,
+				84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */,
+			);
+			path = BusStopScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +100,7 @@
 			);
 			name = MyStop;
 			packageProductDependencies = (
+				84F1441D2E4FB8E900A4462E /* SnapKit */,
 			);
 			productName = MyStop;
 			productReference = 842246B02E4DC52700A03356 /* MyStop.app */;
@@ -110,6 +130,9 @@
 			);
 			mainGroup = 842246A72E4DC52700A03356;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				84F1441C2E4FB8E900A4462E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 842246B12E4DC52700A03356 /* Products */;
 			projectDirPath = "";
@@ -137,9 +160,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */,
+				84F144202E4FBB9E00A4462E /* BusStopItemModel.swift in Sources */,
+				84E764E32E5071970053698B /* AlertManager.swift in Sources */,
 				846B9E722E4E1F740059E156 /* AppDelegate.swift in Sources */,
 				846B9E732E4E1F740059E156 /* SceneDelegate.swift in Sources */,
-				846B9E742E4E1F740059E156 /* ViewController.swift in Sources */,
+				846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84F1441C2E4FB8E900A4462E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84F1441D2E4FB8E900A4462E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84F1441C2E4FB8E900A4462E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 842246A82E4DC52700A03356 /* Project object */;
 }
