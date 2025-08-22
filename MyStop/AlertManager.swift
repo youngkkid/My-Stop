@@ -22,4 +22,18 @@ final class AlertManager {
         
         viewController.present(alert, animated: true)
     }
+    
+    func showPinInfo(with title: String, message: String?, from viewController: UIViewController, onAdd: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Добавить", style: .default) {_ in
+            onAdd?()
+        })
+        
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        
+        viewController.present(alert, animated: true)
+    }
 }

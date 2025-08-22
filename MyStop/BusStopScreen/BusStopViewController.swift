@@ -3,10 +3,11 @@ import SnapKit
 
 final class BusStopViewController: UIViewController {
     
-    private var stops: [BusStopItemModel] = [
-        BusStopItemModel(street: "Петроградская", busses: "1, 46, 76"),
-        BusStopItemModel(street: "Горьковская", busses: "228, 1488")
-    ]
+    // MARK: - Static Properties
+    
+    private var stops: [BusStopItemModel] = []
+    
+    // MARK: - UI Elements
     
     private lazy var busStopTitleLabel: UILabel = {
         let label = UILabel()
@@ -33,25 +34,80 @@ final class BusStopViewController: UIViewController {
     
     private lazy var stopsTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(BusStopTableViewCell.self, forCellReuseIdentifier: BusStopTableViewCell.reuseIdentifier) // добавить класс ячейки
+        tableView.register(BusStopTableViewCell.self, forCellReuseIdentifier: BusStopTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         return tableView
     }()
     
+    private lazy var newStopButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Новая остановка", for: .normal)
+        button.titleLabel?.numberOfLines = 2
+        button.titleLabel?.textAlignment = .center
+        button.backgroundColor = .systemBlue
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
+        button.layer.cornerRadius = 16
+        button.layer.masksToBounds = true
+        
+        button.addTarget(self, action: #selector(newStopButtonTapped), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialize()
-        updateUI()
+        setupViews()
+        updateStubVisibility()
+        setNavItem()
     }
     
-    private func updateUI() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func updateStubVisibility() {
         let isEmpty = stops.isEmpty
         stopsTableView.isHidden = isEmpty
         stopImageStub.isHidden = !isEmpty
         stopTextStub.isHidden = !isEmpty
     }
+    
+    private func setNavItem() {
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.backButtonDisplayMode = .minimal
+    }
+    
+    @objc
+    private func newStopButtonTapped() {
+        let mapView = MapViewController()
+        
+        mapView.onBusStopSelected = { [weak self] stop in
+            guard let self = self else {return}
+            self.stops.append(stop)
+            self.stopsTableView.reloadData()
+            self.updateStubVisibility()
+        }
+        
+        navigationController?.pushViewController(mapView, animated: true)
+    }
+    
 }
+
+// MARK: - UITableViewDataSource
 
 extension BusStopViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +127,8 @@ extension BusStopViewController: UITableViewDataSource {
     
 }
 
+// MARK: - UITableViewDelegate
+
 extension BusStopViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: "") { [weak self] action, view, completion in
@@ -80,7 +138,7 @@ extension BusStopViewController: UITableViewDelegate {
                 
                 self.stops.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.updateUI()
+                self.updateStubVisibility()
             }
             completion(true)
         }
@@ -93,13 +151,16 @@ extension BusStopViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Layout
+
 extension BusStopViewController {
-    private func initialize() {
+    private func setupViews() {
         view.backgroundColor = .systemBackground
         
         setupStubView()
         setupBusStopTitleLabel()
         setupTableView()
+        setupNewStopButton()
     }
     
     private func setupStubView() {
@@ -125,6 +186,17 @@ extension BusStopViewController {
         busStopTitleLabel.snp.makeConstraints {make in
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(16)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(19)
+        }
+    }
+    
+    private func setupNewStopButton() {
+        view.addSubview(newStopButton)
+        
+        newStopButton.snp.makeConstraints {make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(26)
+            make.height.equalTo(50)
+            make.width.equalTo(114)
         }
     }
     

@@ -12,13 +12,35 @@
 		846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E702E4E1F740059E156 /* BusStopViewController.swift */; };
 		846B9E752E4E1F740059E156 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846B9E6B2E4E1F740059E156 /* Assets.xcassets */; };
 		846B9E772E4E1F740059E156 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846B9E6E2E4E1F740059E156 /* LaunchScreen.storyboard */; };
+		846FF4052E508C9D00834B4E /* Pods_MyStop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41DA1CFD82004E693C7301 /* Pods_MyStop.framework */; };
+		846FF4062E508C9D00834B4E /* Pods_MyStop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41DA1CFD82004E693C7301 /* Pods_MyStop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		846FF4092E53990200834B4E /* MapObjectTapListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FF4082E53990200834B4E /* MapObjectTapListener.swift */; };
+		846FF40B2E547A4C00834B4E /* GeoObjectTapListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */; };
+		8489BC532E5086EA00284E15 /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489BC522E5086EA00284E15 /* RequestConstants.swift */; };
+		8489BC562E50872F00284E15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489BC552E50872F00284E15 /* MapViewController.swift */; };
+		84C0E4BC2E588AA90042D6AE /* GeoObjectTapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */; };
 		84E764E32E5071970053698B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E764E22E5071970053698B /* AlertManager.swift */; };
 		84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */; };
 		84F1441E2E4FB8E900A4462E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F1441D2E4FB8E900A4462E /* SnapKit */; };
 		84F144202E4FBB9E00A4462E /* BusStopItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		846FF4072E508C9D00834B4E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				846FF4062E508C9D00834B4E /* Pods_MyStop.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6F41DA1CFD82004E693C7301 /* Pods_MyStop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		842246B02E4DC52700A03356 /* MyStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B9E6A2E4E1F740059E156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846B9E6B2E4E1F740059E156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -26,9 +48,16 @@
 		846B9E6D2E4E1F740059E156 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		846B9E702E4E1F740059E156 /* BusStopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopViewController.swift; sourceTree = "<group>"; };
+		846FF4082E53990200834B4E /* MapObjectTapListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapObjectTapListener.swift; sourceTree = "<group>"; };
+		846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectTapListener.swift; sourceTree = "<group>"; };
+		8489BC522E5086EA00284E15 /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
+		8489BC552E50872F00284E15 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectTapDelegate.swift; sourceTree = "<group>"; };
 		84E764E22E5071970053698B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTableViewCell.swift; sourceTree = "<group>"; };
 		84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopItemModel.swift; sourceTree = "<group>"; };
+		91AE59F89195C6E4FFAB715D /* Pods-MyStop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStop.debug.xcconfig"; path = "Target Support Files/Pods-MyStop/Pods-MyStop.debug.xcconfig"; sourceTree = "<group>"; };
+		B01521BF63769D1560B2956F /* Pods-MyStop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyStop.release.xcconfig"; path = "Target Support Files/Pods-MyStop/Pods-MyStop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846FF4052E508C9D00834B4E /* Pods_MyStop.framework in Frameworks */,
 				84F1441E2E4FB8E900A4462E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,11 +73,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F34B53024BC58638C21A9FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F41DA1CFD82004E693C7301 /* Pods_MyStop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		842246A72E4DC52700A03356 = {
 			isa = PBXGroup;
 			children = (
 				846B9E712E4E1F740059E156 /* MyStop */,
 				842246B12E4DC52700A03356 /* Products */,
+				C164DE449EEE1126A980A959 /* Pods */,
+				3F34B53024BC58638C21A9FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +102,8 @@
 		846B9E712E4E1F740059E156 /* MyStop */ = {
 			isa = PBXGroup;
 			children = (
+				8489BC542E50871B00284E15 /* MapScreen */,
+				84A5CFEE2E5086BE0005ED04 /* Requests */,
 				84E764E22E5071970053698B /* AlertManager.swift */,
 				84F144192E4FB3B200A4462E /* BusStopScreen */,
 				846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */,
@@ -71,6 +113,33 @@
 				846B9E6C2E4E1F740059E156 /* Info.plist */,
 			);
 			path = MyStop;
+			sourceTree = "<group>";
+		};
+		8489BC542E50871B00284E15 /* MapScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84C0E4BA2E588A430042D6AE /* Protocols */,
+				8489BC552E50872F00284E15 /* MapViewController.swift */,
+				846FF4082E53990200834B4E /* MapObjectTapListener.swift */,
+				846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */,
+			);
+			path = MapScreen;
+			sourceTree = "<group>";
+		};
+		84A5CFEE2E5086BE0005ED04 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8489BC522E5086EA00284E15 /* RequestConstants.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		84C0E4BA2E588A430042D6AE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		84F144192E4FB3B200A4462E /* BusStopScreen */ = {
@@ -83,6 +152,15 @@
 			path = BusStopScreen;
 			sourceTree = "<group>";
 		};
+		C164DE449EEE1126A980A959 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91AE59F89195C6E4FFAB715D /* Pods-MyStop.debug.xcconfig */,
+				B01521BF63769D1560B2956F /* Pods-MyStop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -90,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842246C32E4DC52A00A03356 /* Build configuration list for PBXNativeTarget "MyStop" */;
 			buildPhases = (
+				3A6B44A9FA9ECE0671136C92 /* [CP] Check Pods Manifest.lock */,
 				842246AC2E4DC52700A03356 /* Sources */,
 				842246AD2E4DC52700A03356 /* Frameworks */,
 				842246AE2E4DC52700A03356 /* Resources */,
+				2FF00496D62CEB1D5FC60B9A /* [CP] Copy Pods Resources */,
+				846FF4072E508C9D00834B4E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,17 +236,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FF00496D62CEB1D5FC60B9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyStop/Pods-MyStop-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyStop/Pods-MyStop-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyStop/Pods-MyStop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A6B44A9FA9ECE0671136C92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyStop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		842246AC2E4DC52700A03356 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8489BC532E5086EA00284E15 /* RequestConstants.swift in Sources */,
 				84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */,
+				846FF4092E53990200834B4E /* MapObjectTapListener.swift in Sources */,
+				84C0E4BC2E588AA90042D6AE /* GeoObjectTapDelegate.swift in Sources */,
 				84F144202E4FBB9E00A4462E /* BusStopItemModel.swift in Sources */,
+				846FF40B2E547A4C00834B4E /* GeoObjectTapListener.swift in Sources */,
 				84E764E32E5071970053698B /* AlertManager.swift in Sources */,
 				846B9E722E4E1F740059E156 /* AppDelegate.swift in Sources */,
 				846B9E732E4E1F740059E156 /* SceneDelegate.swift in Sources */,
 				846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */,
+				8489BC562E50872F00284E15 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +317,7 @@
 /* Begin XCBuildConfiguration section */
 		842246C42E4DC52A00A03356 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91AE59F89195C6E4FFAB715D /* Pods-MyStop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -213,6 +346,7 @@
 		};
 		842246C52E4DC52A00A03356 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01521BF63769D1560B2956F /* Pods-MyStop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -277,7 +411,6 @@
 				DEVELOPMENT_TEAM = V65FFL4V3Y;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -341,7 +474,6 @@
 				DEVELOPMENT_TEAM = V65FFL4V3Y;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
