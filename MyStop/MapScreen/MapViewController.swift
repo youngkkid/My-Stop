@@ -4,6 +4,8 @@ import YandexMapsMobile
 
 final class MapViewController: UIViewController, GeoObjectTapDelegate {
     
+    // MARK: - Properties
+    
     var onBusStopSelected: ((BusStopItemModel) -> Void)?
     
     private let mapView = YMKMapView()
@@ -15,21 +17,7 @@ final class MapViewController: UIViewController, GeoObjectTapDelegate {
     // экземпляр класса, из которого имплементируем  метод инфы о POI
     private lazy var geoObjectTapListener: YMKLayersGeoObjectTapListener = GeoObjectTapListener(delegate: self)
     
-    private lazy var addNewPointButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Выбрать остановку", for: .normal)
-        button.titleLabel?.numberOfLines = 2
-        button.titleLabel?.textAlignment = .center
-        button.backgroundColor = .lightGray
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-        button.layer.cornerRadius = 16
-        button.layer.masksToBounds = true
-        
-        button.addTarget(self, action: #selector(addNewPointButtonTapped), for: .touchUpInside)
-        
-        return button
-    }()
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +26,12 @@ final class MapViewController: UIViewController, GeoObjectTapDelegate {
         
         setupMapView()
         setupCamera()
-        initialize()
         
         addPlacemark(mapView.mapWindow.map)
         addGeoObjectListener(mapView.mapWindow.map)
     }
+    
+    // MARK: - Public Methods
     
     func didTapGeoObject(_ geoObject: YMKGeoObject) {
         let name = geoObject.name ?? "Неизвестное место"
@@ -54,6 +43,8 @@ final class MapViewController: UIViewController, GeoObjectTapDelegate {
             self.onBusStopSelected?(newStop)
         }
     }
+    
+    // MARK: - Private Methods
     
     private func setupMapView() {
            view.addSubview(mapView)
@@ -104,22 +95,5 @@ final class MapViewController: UIViewController, GeoObjectTapDelegate {
     private func addGeoObjectListener(_ map: YMKMap) {
     map.addTapListener(with: geoObjectTapListener)
     }
-    
-    @objc
-    private func addNewPointButtonTapped() {
-        print("Нажатие")
-    }
 }
 
-extension MapViewController {
-    private func initialize() {
-        view.addSubview(addNewPointButton)
-        
-        addNewPointButton.snp.makeConstraints {make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(26)
-            make.height.equalTo(50)
-            make.width.equalTo(114)
-        }
-    }
-}
