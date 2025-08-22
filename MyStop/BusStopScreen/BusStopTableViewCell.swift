@@ -3,7 +3,11 @@ import SnapKit
 
 final class BusStopTableViewCell: UITableViewCell {
     
+    // MARK: - Static Properties
+    
     static let reuseIdentifier = "BusStopTableViewCell"
+    
+    // MARK: - UI Elements
     
     let stopImageView: UIImageView = {
         let image = UIImage(resource: .stop)
@@ -45,6 +49,8 @@ final class BusStopTableViewCell: UITableViewCell {
     private var busListHStack = UIStackView()
     private var titleAndBusListVSStack = UIStackView()
     
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -58,6 +64,8 @@ final class BusStopTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Lifecycle
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -73,14 +81,18 @@ final class BusStopTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        busListHStack.removeFromSuperview()
+        stopTitleLabel.text = nil
+        busListLabel.text = nil
     }
+    
+    // MARK: - Public Methods
     
     func configure(with model: BusStopItemModel) {
         stopTitleLabel.text = model.street
         busListLabel.text = model.busses
     }
+    
+    // MARK: - Private Methods
     
     private func setupImage() {
         stopImageView.snp.makeConstraints { make in
@@ -100,7 +112,6 @@ final class BusStopTableViewCell: UITableViewCell {
          titleAndBusListVSStack,
          busVSStack].forEach {
             $0.axis = .vertical
-            $0.translatesAutoresizingMaskIntoConstraints = false
             $0.alignment = .leading
         }
         
