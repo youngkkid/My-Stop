@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841F632F2E66D11500972F37 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841F632E2E66D11500972F37 /* UIConstants.swift */; };
 		846B9E722E4E1F740059E156 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E6A2E4E1F740059E156 /* AppDelegate.swift */; };
 		846B9E732E4E1F740059E156 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */; };
 		846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B9E702E4E1F740059E156 /* BusStopViewController.swift */; };
@@ -18,7 +19,11 @@
 		846FF40B2E547A4C00834B4E /* GeoObjectTapListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */; };
 		8489BC532E5086EA00284E15 /* RequestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489BC522E5086EA00284E15 /* RequestConstants.swift */; };
 		8489BC562E50872F00284E15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489BC552E50872F00284E15 /* MapViewController.swift */; };
+		84B44E2B2E647DC200C5CC34 /* BusStopManaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44E2A2E647DC200C5CC34 /* BusStopManaging.swift */; };
+		84B44E2E2E647EF200C5CC34 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44E2D2E647EF200C5CC34 /* NotificationManager.swift */; };
+		84B44E302E64804E00C5CC34 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B44E2F2E64804E00C5CC34 /* MapService.swift */; };
 		84C0E4BC2E588AA90042D6AE /* GeoObjectTapDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */; };
+		84C0E4BE2E58B25D0042D6AE /* BusStopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0E4BD2E58B25D0042D6AE /* BusStopViewModel.swift */; };
 		84E764E32E5071970053698B /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E764E22E5071970053698B /* AlertManager.swift */; };
 		84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */; };
 		84F1441E2E4FB8E900A4462E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84F1441D2E4FB8E900A4462E /* SnapKit */; };
@@ -41,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		6F41DA1CFD82004E693C7301 /* Pods_MyStop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyStop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		841F632E2E66D11500972F37 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		842246B02E4DC52700A03356 /* MyStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		846B9E6A2E4E1F740059E156 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846B9E6B2E4E1F740059E156 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +58,11 @@
 		846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectTapListener.swift; sourceTree = "<group>"; };
 		8489BC522E5086EA00284E15 /* RequestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestConstants.swift; sourceTree = "<group>"; };
 		8489BC552E50872F00284E15 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		84B44E2A2E647DC200C5CC34 /* BusStopManaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopManaging.swift; sourceTree = "<group>"; };
+		84B44E2D2E647EF200C5CC34 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		84B44E2F2E64804E00C5CC34 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoObjectTapDelegate.swift; sourceTree = "<group>"; };
+		84C0E4BD2E58B25D0042D6AE /* BusStopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopViewModel.swift; sourceTree = "<group>"; };
 		84E764E22E5071970053698B /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopTableViewCell.swift; sourceTree = "<group>"; };
 		84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopItemModel.swift; sourceTree = "<group>"; };
@@ -81,6 +91,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		841F632B2E66CF2000972F37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84B44E2F2E64804E00C5CC34 /* MapService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		841F632C2E66CF3100972F37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84B44E2D2E647EF200C5CC34 /* NotificationManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		841F632D2E66D10200972F37 /* UIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				841F632E2E66D11500972F37 /* UIConstants.swift */,
+			);
+			path = UIConstants;
+			sourceTree = "<group>";
+		};
 		842246A72E4DC52700A03356 = {
 			isa = PBXGroup;
 			children = (
@@ -103,11 +137,13 @@
 			isa = PBXGroup;
 			children = (
 				8489BC542E50871B00284E15 /* MapScreen */,
-				84A5CFEE2E5086BE0005ED04 /* Requests */,
-				84E764E22E5071970053698B /* AlertManager.swift */,
 				84F144192E4FB3B200A4462E /* BusStopScreen */,
+				84C0E4BA2E588A430042D6AE /* Protocols */,
+				841F632D2E66D10200972F37 /* UIConstants */,
+				84E764E22E5071970053698B /* AlertManager.swift */,
 				846B9E6F2E4E1F740059E156 /* SceneDelegate.swift */,
 				846B9E6A2E4E1F740059E156 /* AppDelegate.swift */,
+				84A5CFEE2E5086BE0005ED04 /* Requests */,
 				846B9E6E2E4E1F740059E156 /* LaunchScreen.storyboard */,
 				846B9E6B2E4E1F740059E156 /* Assets.xcassets */,
 				846B9E6C2E4E1F740059E156 /* Info.plist */,
@@ -118,7 +154,7 @@
 		8489BC542E50871B00284E15 /* MapScreen */ = {
 			isa = PBXGroup;
 			children = (
-				84C0E4BA2E588A430042D6AE /* Protocols */,
+				841F632B2E66CF2000972F37 /* Service */,
 				8489BC552E50872F00284E15 /* MapViewController.swift */,
 				846FF4082E53990200834B4E /* MapObjectTapListener.swift */,
 				846FF40A2E547A4C00834B4E /* GeoObjectTapListener.swift */,
@@ -138,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				84C0E4BB2E588AA90042D6AE /* GeoObjectTapDelegate.swift */,
+				84B44E2A2E647DC200C5CC34 /* BusStopManaging.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -145,7 +182,9 @@
 		84F144192E4FB3B200A4462E /* BusStopScreen */ = {
 			isa = PBXGroup;
 			children = (
+				841F632C2E66CF3100972F37 /* Service */,
 				846B9E702E4E1F740059E156 /* BusStopViewController.swift */,
+				84C0E4BD2E58B25D0042D6AE /* BusStopViewModel.swift */,
 				84F1441A2E4FB3CF00A4462E /* BusStopTableViewCell.swift */,
 				84F1441F2E4FBB9E00A4462E /* BusStopItemModel.swift */,
 			);
@@ -291,10 +330,15 @@
 				84F1441B2E4FB3CF00A4462E /* BusStopTableViewCell.swift in Sources */,
 				846FF4092E53990200834B4E /* MapObjectTapListener.swift in Sources */,
 				84C0E4BC2E588AA90042D6AE /* GeoObjectTapDelegate.swift in Sources */,
+				84B44E2E2E647EF200C5CC34 /* NotificationManager.swift in Sources */,
+				84B44E302E64804E00C5CC34 /* MapService.swift in Sources */,
 				84F144202E4FBB9E00A4462E /* BusStopItemModel.swift in Sources */,
+				841F632F2E66D11500972F37 /* UIConstants.swift in Sources */,
+				84C0E4BE2E58B25D0042D6AE /* BusStopViewModel.swift in Sources */,
 				846FF40B2E547A4C00834B4E /* GeoObjectTapListener.swift in Sources */,
 				84E764E32E5071970053698B /* AlertManager.swift in Sources */,
 				846B9E722E4E1F740059E156 /* AppDelegate.swift in Sources */,
+				84B44E2B2E647DC200C5CC34 /* BusStopManaging.swift in Sources */,
 				846B9E732E4E1F740059E156 /* SceneDelegate.swift in Sources */,
 				846B9E742E4E1F740059E156 /* BusStopViewController.swift in Sources */,
 				8489BC562E50872F00284E15 /* MapViewController.swift in Sources */,
@@ -326,6 +370,8 @@
 				DEVELOPMENT_TEAM = V65FFL4V3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyStop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Мы используем ваше местоположение для отображения вашей текущей геопозиции и в фоновом режиме.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы используем ваше местоположение для отображения вашей текущей геопозиции.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -355,6 +401,8 @@
 				DEVELOPMENT_TEAM = V65FFL4V3Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyStop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Мы используем ваше местоположение для отображения вашей текущей геопозиции и в фоновом режиме.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Мы используем ваше местоположение для отображения вашей текущей геопозиции.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
