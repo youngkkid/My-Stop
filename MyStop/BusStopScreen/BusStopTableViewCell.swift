@@ -12,7 +12,7 @@ final class BusStopTableViewCell: UITableViewCell {
     let stopImageView: UIImageView = {
         let image = UIImage(resource: .stop)
         let imageView = UIImageView(image: image)
-        imageView.layer.cornerRadius = 12
+        imageView.layer.cornerRadius = UIConstants.stopImageViewCorner
         imageView.clipsToBounds = true
         
         return imageView
@@ -20,26 +20,26 @@ final class BusStopTableViewCell: UITableViewCell {
     
     private let stopTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "Остановка:"
         label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 17, weight: .regular)
-        label.textColor = .black
+        label.font = .systemFont(ofSize: UIConstants.stopTitleLabelFont, weight: .regular)
+        label.textColor = .label
         
         return label
     }()
     
     private let busListTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Автобусы"
         label.numberOfLines = 1
-        label.font = .systemFont(ofSize: 17, weight: .bold)
-        label.textColor = .black
+        label.font = .systemFont(ofSize: UIConstants.busListTitleLabelFont, weight: .bold)
+        label.textColor = .label
         
         return label
     }()
     
     private let busListLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(ofSize: UIConstants.busListLabelFont, weight: .regular)
         label.textColor = .green
         
         return label
@@ -81,15 +81,13 @@ final class BusStopTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        stopTitleLabel.text = nil
-        busListLabel.text = nil
+        busListTitleLabel.text = nil
     }
     
     // MARK: - Public Methods
     
     func configure(with model: BusStopItemModel) {
-        stopTitleLabel.text = model.street
-        busListLabel.text = model.busses
+        busListTitleLabel.text = model.street
     }
     
     // MARK: - Private Methods

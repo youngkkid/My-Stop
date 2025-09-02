@@ -1,5 +1,3 @@
-// класс обработчик, который имплементирует метод для нажатия на метку
-
 import ObjectiveC
 import YandexMapsMobile
 

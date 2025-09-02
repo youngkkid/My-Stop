@@ -1,19 +1,32 @@
 import UIKit
+import CoreLocation
 import SnapKit
 
 final class BusStopViewController: UIViewController {
     
     // MARK: - Static Properties
     
-    private var stops: [BusStopItemModel] = []
+    private let manager: BusStopManaging
+    private let locationManager = CLLocationManager()
+    
+    // MARK: - Init
+    
+    init(manager: BusStopManaging) {
+        self.manager = manager
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Elements
     
     private lazy var busStopTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Остановки"
-        label.font = .systemFont(ofSize: 34 , weight: .bold)
-        label.textColor = .black
+        label.font = .systemFont(ofSize: UIConstants.busStopTitleLabelFont , weight: .bold)
+        label.textColor = .label
         
         return label
     }()
@@ -27,8 +40,8 @@ final class BusStopViewController: UIViewController {
     private lazy var stopTextStub: UILabel = {
         let label = UILabel()
         label.text = "Здесь будут ваши остановки"
-        label.font = .systemFont(ofSize: 12, weight: .medium)
-        label.textColor = .black
+        label.font = .systemFont(ofSize: UIConstants.stopTextStubFont, weight: .medium)
+        label.textColor = .secondaryLabel
         return label
     }()
     
@@ -47,8 +60,8 @@ final class BusStopViewController: UIViewController {
         button.titleLabel?.textAlignment = .center
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .medium)
-        button.layer.cornerRadius = 16
+        button.titleLabel?.font = .systemFont(ofSize: UIConstants.newStopButtonFont, weight: .medium)
+        button.layer.cornerRadius = UIConstants.newStopButtonCorner
         button.layer.masksToBounds = true
         
         button.addTarget(self, action: #selector(newStopButtonTapped), for: .touchUpInside)
@@ -60,9 +73,17 @@ final class BusStopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupViews()
-        updateStubVisibility()
         setNavItem()
+        setupLocationManager()
+        
+        manager.addObserver { [weak self] stops in
+            DispatchQueue.main.async {
+                self?.stopsTableView.reloadData()
+                self?.updateStubVisibility(stops: stops)
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,7 +100,7 @@ final class BusStopViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func updateStubVisibility() {
+    private func updateStubVisibility(stops: [BusStopItemModel]) {
         let isEmpty = stops.isEmpty
         stopsTableView.isHidden = isEmpty
         stopImageStub.isHidden = !isEmpty
@@ -93,15 +114,7 @@ final class BusStopViewController: UIViewController {
     
     @objc
     private func newStopButtonTapped() {
-        let mapView = MapViewController()
-        
-        mapView.onBusStopSelected = { [weak self] stop in
-            guard let self = self else {return}
-            self.stops.append(stop)
-            self.stopsTableView.reloadData()
-            self.updateStubVisibility()
-        }
-        
+        let mapView = MapViewController(manager: manager)
         navigationController?.pushViewController(mapView, animated: true)
     }
     
@@ -111,7 +124,7 @@ final class BusStopViewController: UIViewController {
 
 extension BusStopViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        stops.count
+        manager.stops.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,11 +133,10 @@ extension BusStopViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let model = stops[indexPath.row]
+        let model = manager.stops[indexPath.row]
         cell.configure(with: model)
         return cell
     }
-    
 }
 
 // MARK: - UITableViewDelegate
@@ -134,11 +146,11 @@ extension BusStopViewController: UITableViewDelegate {
         let deleteAction = UIContextualAction(style: .destructive, title: "") { [weak self] action, view, completion in
             guard let self = self else {return}
             
+            let stop = self.manager.stops[indexPath.row]
+            
             AlertManager.shared.showDeleteConfirmation(on: self, title: "Вы действительно хотите удалить остановку?") {
                 
-                self.stops.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
-                self.updateStubVisibility()
+                self.manager.removeStop(stop)
             }
             completion(true)
         }
@@ -148,6 +160,37 @@ extension BusStopViewController: UITableViewDelegate {
         let config = UISwipeActionsConfiguration(actions: [deleteAction])
         config.performsFirstActionWithFullSwipe = false
         return config
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+
+extension BusStopViewController: CLLocationManagerDelegate {
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse:
+            manager.requestAlwaysAuthorization()
+        case .authorizedAlways:
+            manager.startUpdatingLocation()
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        
+        NoNotificationManager.shared.locationManager(for: self.manager.stops, userLocations: location)
     }
 }
 

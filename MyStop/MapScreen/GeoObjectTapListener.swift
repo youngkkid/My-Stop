@@ -1,8 +1,6 @@
 import Foundation
 import YandexMapsMobile
 
-// класс для взаимодействия с POI (points of interest), при нажатии на которые можно получать краткую инфу
-
 final class GeoObjectTapListener: NSObject, YMKLayersGeoObjectTapListener {
     
     weak var delegate: GeoObjectTapDelegate?
@@ -18,6 +16,4 @@ final class GeoObjectTapListener: NSObject, YMKLayersGeoObjectTapListener {
         
         return true
     }
-    
-    
 }
